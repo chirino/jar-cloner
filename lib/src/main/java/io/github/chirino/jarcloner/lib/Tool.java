@@ -8,6 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.jar.JarOutputStream;
@@ -27,7 +29,8 @@ public class Tool {
             for (Entry entry : structure.entries) {
                 JarEntry je = new JarEntry(entry.name);
                 je.setComment(entry.comment);
-                je.setTime(entry.time);
+                je.setTimeLocal(LocalDateTime.ofEpochSecond(entry.time, 0, ZoneOffset.UTC));
+                //je.setTime(entry.time);
                 je.setMethod(entry.method);
 
                 if (je.isDirectory()) {
@@ -125,7 +128,7 @@ public class Tool {
                     Entry e = new Entry();
                     e.name = entry.getName();
                     e.comment = entry.getComment();
-                    e.time = entry.getTime();
+                    e.time = entry.getTimeLocal().toEpochSecond(ZoneOffset.UTC);
                     e.extra = entry.getExtra();
                     e.method = entry.getMethod();
                     structure.entries.add(e);

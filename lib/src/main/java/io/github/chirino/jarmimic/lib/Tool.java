@@ -1,4 +1,4 @@
-package io.github.chirino.jarcloner.lib;
+package io.github.chirino.jarmimic.lib;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;

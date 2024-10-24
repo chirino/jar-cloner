@@ -1,4 +1,4 @@
-package io.github.chirino.jarcloner;
+package io.github.chirino.jarmimic;
 
 import io.quarkus.picocli.runtime.annotations.TopCommand;
 import io.quarkus.runtime.QuarkusApplication;
@@ -8,7 +8,7 @@ import picocli.CommandLine;
 
 @QuarkusMain
 @TopCommand
-@CommandLine.Command(name = "jar-cloner", mixinStandardHelpOptions = true, subcommands = {
+@CommandLine.Command(name = "jar-mimic", mixinStandardHelpOptions = true, subcommands = {
         Extract.class,
         Create.class,
 })

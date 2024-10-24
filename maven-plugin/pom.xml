@@ -28,11 +28,11 @@
     
     <parent>
         <groupId>io.github.chirino</groupId>
-        <artifactId>jar-cloner-pom</artifactId>
+        <artifactId>jar-mimic-pom</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>jar-cloner-maven-plugin</artifactId>
+    <artifactId>jar-mimic-maven-plugin</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
@@ -47,7 +47,7 @@
     <dependencies>
         <dependency>
             <groupId>io.github.chirino</groupId>
-            <artifactId>jar-cloner-lib</artifactId>
+            <artifactId>jar-mimic-lib</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
@@ -102,7 +102,7 @@
                             <goal>descriptor</goal>
                         </goals>
                         <configuration>
-                            <goalPrefix>jar-cloner</goalPrefix>
+                            <goalPrefix>jar-mimic</goalPrefix>
                         </configuration>
                     </execution>
                     <execution>
@@ -111,8 +111,8 @@
                             <goal>helpmojo</goal>
                         </goals>
                         <configuration>
-                            <helpPackageName>io.github.chirino.jarcloner</helpPackageName>
-                            <goalPrefix>jar-cloner</goalPrefix>
+                            <helpPackageName>io.github.chirino.jarmimic</helpPackageName>
+                            <goalPrefix>jar-mimic</goalPrefix>
                         </configuration>
                     </execution>
                 </executions>

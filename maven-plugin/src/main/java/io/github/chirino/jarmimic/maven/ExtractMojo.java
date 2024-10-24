@@ -1,8 +1,8 @@
-package io.github.chirino.jarcloner.maven;
+package io.github.chirino.jarmimic.maven;
 
 import java.io.File;
 
-import io.github.chirino.jarcloner.lib.Tool;
+import io.github.chirino.jarmimic.lib.Tool;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -16,10 +16,10 @@ import org.apache.maven.plugins.annotations.Parameter;
 @Mojo(name = "extract")
 public class ExtractMojo extends AbstractMojo {
 
-    @Parameter(property = "jar-cloner.structure-yaml", defaultValue = "${basedir}/src/main/jar-cloner.yaml", required = true)
+    @Parameter(property = "jar-mimic.structure-yaml", defaultValue = "${basedir}/src/main/jar-mimic.yaml", required = true)
     private File yamlFile;
 
-    @Parameter(property = "jar-cloner.jar", required = true)
+    @Parameter(property = "jar-mimic.jar", required = true)
     private File archiveFile;
 
     public void execute() throws MojoExecutionException, MojoFailureException {

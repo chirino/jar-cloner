@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.chirino</groupId>
-    <artifactId>jar-cloner-pom</artifactId>
+    <artifactId>jar-mimic-pom</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>jar-cloner parent</name>
+    <name>jar-mimic parent</name>
 
     <modules>
         <module>lib</module>

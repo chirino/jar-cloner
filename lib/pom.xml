@@ -4,11 +4,11 @@
 
     <parent>
         <groupId>io.github.chirino</groupId>
-        <artifactId>jar-cloner-pom</artifactId>
+        <artifactId>jar-mimic-pom</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>jar-cloner-lib</artifactId>
+    <artifactId>jar-mimic-lib</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <dependencies>

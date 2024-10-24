@@ -1,6 +1,6 @@
-package io.github.chirino.jarcloner;
+package io.github.chirino.jarmimic;
 
-import io.github.chirino.jarcloner.lib.Tool;
+import io.github.chirino.jarmimic.lib.Tool;
 import picocli.CommandLine;
 
 @CommandLine.Command(name = "create", description = "creates the zip file with the structure of the meta file")

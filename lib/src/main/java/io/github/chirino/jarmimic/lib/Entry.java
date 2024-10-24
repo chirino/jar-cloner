@@ -1,4 +1,4 @@
-package io.github.chirino.jarcloner.lib;
+package io.github.chirino.jarmimic.lib;
 
 public class Entry {
     public String name;

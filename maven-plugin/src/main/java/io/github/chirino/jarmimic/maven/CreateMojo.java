@@ -1,6 +1,6 @@
-package io.github.chirino.jarcloner.maven;
+package io.github.chirino.jarmimic.maven;
 
-import io.github.chirino.jarcloner.lib.Tool;
+import io.github.chirino.jarmimic.lib.Tool;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -18,19 +18,19 @@ import java.io.File;
 @Mojo(name = "create")
 public class CreateMojo extends AbstractMojo {
 
-    @Parameter(property = "jar-cloner.dir", defaultValue = "${project.build.directory}/classes", required = true)
+    @Parameter(property = "jar-mimic.dir", defaultValue = "${project.build.directory}/classes", required = true)
     private File directory;
 
-    @Parameter(property = "jar-cloner.structure-yaml", defaultValue = "${basedir}/src/main/jar-cloner.yaml", required = true)
+    @Parameter(property = "jar-mimic.structure-yaml", defaultValue = "${basedir}/src/main/jar-mimic.yaml", required = true)
     private File metaFile;
 
-    @Parameter(property = "jar-cloner.resources", defaultValue = "${basedir}/src/main/jar-cloner-resources", required = false)
+    @Parameter(property = "jar-mimic.resources", defaultValue = "${basedir}/src/main/jar-mimic-resources", required = false)
     private File resources;
 
-    @Parameter(property = "jar-cloner.to-jar", defaultValue = "${project.build.directory}/${project.build.finalName}.jar", required = true)
+    @Parameter(property = "jar-mimic.to-jar", defaultValue = "${project.build.directory}/${project.build.finalName}.jar", required = true)
     private File toArchiveFile;
 
-    @Parameter(property = "jar-cloner.attach", defaultValue = "true")
+    @Parameter(property = "jar-mimic.attach", defaultValue = "true")
     private boolean attach;
 
     @Parameter(defaultValue = "${project}", readonly = true, required = true)

@@ -5,18 +5,19 @@
 
     <parent>
         <groupId>io.github.chirino</groupId>
-        <artifactId>jar-cloner-pom</artifactId>
+        <artifactId>jar-mimic-pom</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <groupId>io.github.chirino</groupId>
-    <artifactId>jar-cloner</artifactId>
+    <artifactId>jar-mimic</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <description>
-        Allows you to clone a jar by packaging it's entries in
-        the same order and with the same timestamps as the orignial jar's
-        entries.
+        Allows you to mimic an existing jar by extracting the jar's 
+        structure such as its entry order, timestamps, compressions setttings, 
+        etc and then using it to create a new jar that will have the same
+        settings.
     </description>
 
     <dependencyManagement>
@@ -47,7 +48,7 @@
         </dependency>
         <dependency>
             <groupId>io.github.chirino</groupId>
-            <artifactId>jar-cloner-lib</artifactId>
+            <artifactId>jar-mimic-lib</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

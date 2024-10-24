@@ -1,4 +1,4 @@
-package io.github.chirino.jarcloner.lib;
+package io.github.chirino.jarmimic.lib;
 
 import java.util.ArrayList;
 

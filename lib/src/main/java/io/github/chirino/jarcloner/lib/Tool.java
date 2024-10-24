@@ -30,7 +30,6 @@ public class Tool {
                 JarEntry je = new JarEntry(entry.name);
                 je.setComment(entry.comment);
                 je.setTimeLocal(LocalDateTime.ofEpochSecond(entry.time, 0, ZoneOffset.UTC));
-                //je.setTime(entry.time);
                 je.setMethod(entry.method);
 
                 if (je.isDirectory()) {

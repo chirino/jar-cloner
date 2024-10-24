@@ -4,9 +4,12 @@ import io.github.chirino.jarcloner.lib.Tool;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugins.annotations.Component;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.project.MavenProject;
+import org.apache.maven.project.MavenProjectHelper;
 
 import java.io.File;
 
@@ -31,6 +34,12 @@ public class RepackageMojo extends AbstractMojo {
     @Parameter(property = "jar-cloner.repack-dir", defaultValue = "${project.build.directory}/repack-dir", required = true)
     private File directory;
 
+    @Parameter(property = "jar-cloner.attach", defaultValue = "true")
+    private boolean attach;
+
+    @Parameter(defaultValue = "${project}", readonly = true, required = true)
+    private MavenProject project;
+
     public void execute() throws MojoExecutionException, MojoFailureException {
         System.out.println("repacking jar :" + fromArchiveFile + ", using structure from: " + metaFile + " and resources from: " + resources);
         try {
@@ -38,6 +47,11 @@ public class RepackageMojo extends AbstractMojo {
             Tool.extract(fromArchiveFile.getAbsolutePath(), null, directory.getAbsolutePath());
             String[] directories = {resources.getAbsolutePath(), directory.getAbsolutePath()};
             Tool.create(directories, metaFile.getAbsolutePath(), toArchiveFile.getAbsolutePath());
+
+            if (attach) {
+                // Attach the artifact to the project
+                project.getArtifact().setFile(toArchiveFile);
+            }
 
         } catch (Exception e) {
             throw new MojoExecutionException("Error creating jar file", e);
